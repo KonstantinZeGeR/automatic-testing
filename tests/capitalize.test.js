@@ -1,11 +1,8 @@
-import { capitalize } from '../src/capitalize.js';
+import { strict as assert } from "node:assert";
+import { capitalize } from "../src/capitalize.js";
 
-if (capitalize('hello') !== 'Hello') {
-  throw new Error('Функция работает неверно!');
-}
+assert.equal(capitalize("hello"), "Hello", "Функция возвращает строку с заглавной буквы");
 
-if (capitalize('') !== '') {
-  throw new Error('Функция работает неверно!');
-}
+assert.equal(capitalize(""), "", "Функция должна возвращать пустую строку");
 
-console.log('Все тесты пройдены!');
+console.log("Все тесты пройдены!");
